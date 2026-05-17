@@ -32,6 +32,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "peerDependencies": {
+    "@bstockwelldev/react-skin-system": "^0.1.0"
+  },
   "scripts": {
     "build": "tsup && node scripts/copy-style.mjs",
     "typecheck": "tsc --noEmit",
@@ -39,7 +42,7 @@
     "test:watch": "vitest"
   },
   "devDependencies": {
-    "@bstockwelldev/react-skin-system": "file:../react-skin-system",
+    "@bstockwelldev/react-skin-system": "^0.1.0",
     "@types/node": "^22.15.29",
     "tsup": "^8.3.5",
     "typescript": "^5.6.3",
