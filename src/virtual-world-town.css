@@ -1,0 +1,115 @@
+/**
+ * Virtual world town skin — portable overworld shell token layer.
+ * Scope: html[data-skin='virtual-world-town'] only.
+ */
+html[data-skin='virtual-world-town'] {
+  color-scheme: light;
+
+  --town-sky: #a9d8ff;
+  --town-grass: #8bc86b;
+  --town-grass-dark: #4a8f46;
+  --town-path: #d6b174;
+  --town-water: #5fb7d6;
+  --town-roof: #b75757;
+  --town-wall: #f2dfb5;
+  --town-ink: #203018;
+  --town-muted: #526445;
+  --town-panel: #fff8db;
+  --town-panel-alt: #f2e4b7;
+  --town-border: #3c4a2c;
+  --town-quest: #f2c94c;
+  --town-danger: #d45b4f;
+
+  --skin-font-pixel: 'Pixelify Sans', 'Silkscreen', ui-monospace, monospace;
+  --skin-font-mono: 'Pixelify Sans', ui-monospace, monospace;
+  --skin-tile-size: 24px;
+  --skin-panel-shadow: 4px 4px 0 rgba(32, 48, 24, 0.35);
+  --skin-route-marker: '▣';
+
+  --background: 95 44% 91%;
+  --foreground: 100 33% 14%;
+  --card: 48 100% 93%;
+  --card-foreground: 100 33% 14%;
+  --popover: 48 100% 95%;
+  --popover-foreground: 100 33% 14%;
+  --primary: 111 41% 48%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 36 55% 65%;
+  --secondary-foreground: 100 33% 14%;
+  --muted: 47 54% 83%;
+  --muted-foreground: 91 18% 33%;
+  --accent: 45 87% 62%;
+  --accent-foreground: 100 33% 14%;
+  --destructive: 5 61% 57%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 85 25% 23%;
+  --input: 85 25% 23%;
+  --ring: 111 41% 48%;
+
+  --sidebar-background: 48 100% 92%;
+  --sidebar-foreground: 100 33% 14%;
+  --sidebar-primary: 111 41% 48%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 47 54% 83%;
+  --sidebar-accent-foreground: 100 33% 14%;
+  --sidebar-border: 85 25% 23%;
+  --sidebar-ring: 111 41% 48%;
+
+  font-family: var(--skin-font-mono);
+  background:
+    linear-gradient(90deg, rgba(74, 143, 70, 0.12) 1px, transparent 1px),
+    linear-gradient(rgba(74, 143, 70, 0.12) 1px, transparent 1px),
+    var(--town-grass);
+  background-size: var(--skin-tile-size) var(--skin-tile-size);
+}
+
+html[data-skin='virtual-world-town'] :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--town-ink);
+  font-family: var(--skin-font-pixel);
+  letter-spacing: 0.03em;
+}
+
+html[data-skin='virtual-world-town'] [data-skin-card],
+html[data-skin='virtual-world-town'] .skin-card {
+  border: 2px solid var(--town-border);
+  background: var(--town-panel);
+  box-shadow: var(--skin-panel-shadow);
+}
+
+html[data-skin='virtual-world-town'] .skin-building {
+  position: relative;
+  border: 2px solid var(--town-border);
+  background: linear-gradient(var(--town-roof) 0 28%, var(--town-wall) 28%);
+  box-shadow: var(--skin-panel-shadow);
+}
+
+html[data-skin='virtual-world-town'] .skin-building::before {
+  content: var(--skin-route-marker);
+  position: absolute;
+  top: -0.9em;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--town-quest);
+  text-shadow: 1px 1px 0 var(--town-border);
+}
+
+html[data-skin='virtual-world-town'] .skin-town-path {
+  background:
+    linear-gradient(90deg, rgba(60, 74, 44, 0.12) 1px, transparent 1px),
+    linear-gradient(rgba(60, 74, 44, 0.12) 1px, transparent 1px),
+    var(--town-path);
+  background-size: var(--skin-tile-size) var(--skin-tile-size);
+}
+
+html[data-skin='virtual-world-town'] .skin-npc-bubble {
+  border: 2px solid var(--town-border);
+  background: #fff;
+  color: var(--town-ink);
+  box-shadow: 3px 3px 0 rgba(32, 48, 24, 0.35);
+}
+
+html[data-skin='virtual-world-town'] .skin-quest {
+  color: var(--town-ink);
+  background: var(--town-quest);
+  border: 2px solid var(--town-border);
+}
